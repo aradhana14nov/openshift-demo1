@@ -1,5 +1,6 @@
-FROM        node:latest
-MAINTAINER  AS
-COPY        cpp hello-world.py /src/app
-WORKDIR     /src/app
-CMD python hello-world.py
+FROM python:3
+ADD hello-world.py /
+RUN pip install flask
+RUN pip install flask_restful
+EXPOSE 3333
+CMD [ "python", "./hello-world.py"]
