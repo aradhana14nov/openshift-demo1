@@ -5,6 +5,6 @@ RUN apt-get install -y python
 WORKDIR /app
 COPY . /app
 EXPOSE 80
-CMD [ "python", "./hello-world.py"]
-
+CMD ["hello-world.py"]
+ENTRYPOINT ["python3"]
 
