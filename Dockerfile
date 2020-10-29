@@ -2,7 +2,8 @@ FROM ubuntu
 MAINTAINER AS
 RUN apt-get update
 RUN apt-get install -y python
-ADD hello-world.py /
+WORKDIR /app
+ADD hello-world.py /app
 CMD [ "python", "./hello-world.py"]
-EXPOSE 3333
+EXPOSE 80
 
